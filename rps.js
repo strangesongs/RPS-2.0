@@ -21,40 +21,29 @@ function convertToWord(letter) {
 }
 
 function win(userChoice, computerChoice) {
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "comp".fontsize(3).sub();
+
   const userChoice_div = document.getElementById(userChoice);
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${convertToWord(userChoice)}${smallUserWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You win!`;
-  userChoice_div.classList.add('green-glow');
-  setTimeout(() =>  userChoice_div.classList.remove('green-glow'), 250);
+  result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win!`;
+
 }
 
 
 
 function lose(userChoice, computerChoice) {
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "comp".fontsize(3).sub();
   const userChoice_div = document.getElementById(userChoice);
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} beats ${convertToWord(userChoice)}${smallUserWord}. You lost!`;
-  userChoice_div.classList.add('red-glow');
-  setTimeout(() => userChoice_div.classList.remove('red-glow'), 250);
+  result_p.innerHTML = `${convertToWord(computerChoice)} beats ${convertToWord(userChoice)}. You lost!`;
 
 }
 
 function draw(userChoice, computerChoice) {
-  const smallUserWord = "user".fontsize(3).sub();
-  const smallCompWord = "comp".fontsize(3).sub();
   const userChoice_div = document.getElementById(userChoice);
-  result_p.innerHTML = `${convertToWord(computerChoice)}${smallCompWord} is the same as ${convertToWord(userChoice)}${smallUserWord}. It's a tie!`;
-  userChoice_div.classList.add('gray-glow');
-  setTimeout(() => userChoice_div.classList.remove('gray-glow'), 250);
-
+  result_p.innerHTML = `${convertToWord(computerChoice)} is the same as ${convertToWord(userChoice)}. It's a tie!`;
 }
 
 

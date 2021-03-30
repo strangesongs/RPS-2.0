@@ -11,11 +11,32 @@ body {
 }
 
 header {
-  background: white;
+  background:  rgb(226, 189, 189);
   padding: 20px;
   text-align: center;
 }
 
+button {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 1px 1px 0px #bda2b;
+  -webkit-box-shadow: 3px 3px 15px #bda2bd;
+  -moz-box-shadow: 3px 3px 15px #bda2bd;
+  box-shadow: 3px 3px 15px #bda2bd;
+  font-family: 'Averia Serif Libre', cursive;
+  color: #ffffff;
+  font-size: 25px;
+  background: #944367;
+  padding: 10px 20px 10px 20px;
+    margin: auto;
+
+}
+
+button:hover {
+  background: #802a80;
+  text-decoration: none;
+}
 
 
 header > h1 {
@@ -31,15 +52,8 @@ header > h1 {
 
 .choice {
   display: inline-block;
-  border: 4px solid white;
   padding: 20px;
   margin: 0 20px;
-  transition: all 0.5s ease;
-}
-
-.choice:hover {
-  cursor: pointer;
-  background: pink;
 }
 
 #action-message {
@@ -78,40 +92,25 @@ header > h1 {
 
   #user-label {
     position: absolute;
-    top: 30px;
+    top: -10px;
     left: -25px;
   }
 
   #computer-label {
     position: absolute;
-    top: 30px;
-    right: -25px;
+    top: 74px;
+    right: -40px;
   }
   
   .result {
-    font-size: 40px;
+    font-size: 36px;
     color: white;
+    padding: 10px;
   }
 
   .result > p {
     text-align: center;
     font-weight: bold;
     font-family: 'Averia Serif Libre', cursive;    
-  }
-
-  .green-glow {
-    border: 4px solid #4dcc7d;
-    box-shadow: 0 0 10px #31b43a;
-  }
-  
-  .red-glow {
-    border: 4px solid #fc121b;
-    box-shadow: 0 0 10px #d01115;
-  }
-  
-  .gray-glow {
-    border: 4px solid #363637;
-    box-shadow: 0 0 10px #35293b;
-  
   }
 
