@@ -7,6 +7,8 @@ const result_p = document.querySelector(".result > p");
 const rock_div = document.getElementById("r");
 const paper_div = document.getElementById("p");
 const scissors_div = document.getElementById("s");
+const action_div = document.getElementById("action-message");
+let button = document.querySelector('#button');
 
 function getComputerChoice() {
   const choices = ['r', 'p', 's'];
@@ -29,8 +31,6 @@ function win(userChoice, computerChoice) {
   result_p.innerHTML = `${convertToWord(userChoice)} beats ${convertToWord(computerChoice)}. You win!`;
 
 }
-
-
 
 function lose(userChoice, computerChoice) {
   const userChoice_div = document.getElementById(userChoice);
@@ -65,15 +65,36 @@ function game(userChoice) {
     case "ss":
         draw(userChoice, computerChoice);
         break;
- }
+  } 
+  resetGame();
 }
 
+ 
 function main() {
+  
   rock_div.addEventListener('click', () => game("r"));
 
   paper_div.addEventListener('click', () => game("p"));
 
   scissors_div.addEventListener('click', () => game("s"));
+  
 }
 
 main();
+
+function resetGame () {
+  if (userScore === 5) {
+    userScore = 0;
+    computerScore = 0;
+    return result_p.innerHTML = `You won the game! Make a choice to play again!`;
+    
+  }
+  else if (computerScore === 5) {
+    userScore = 0;
+    computerScore = 0;    
+    return result_p.innerHTML = `You lost the game! Make a choice to play again!`;
+  
+  }
+
+  // maybe a function like resetGame() that rewrites numbers and 
+}
